@@ -30,6 +30,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// PARALLAX MOUSE EFFECT FOR HERO SECTION
+// ============================================
+
+const heroSection = document.querySelector('.hero-section');
+
+if (heroSection) {
+  document.addEventListener('mousemove', function(event) {
+    // Get mouse position as percentage (0-100)
+    const x = (event.clientX / window.innerWidth) * 100;
+    const y = (event.clientY / window.innerHeight) * 100;
+    
+    // Calculate background position with subtle offset
+    // The 20% size - 100% size = 20% extra space for movement
+    const bgX = 50 + (x - 50) * 0.15; // 15% of mouse movement
+    const bgY = 50 + (y - 50) * 0.15; // 15% of mouse movement
+    
+    // Apply background position with smooth transition
+    heroSection.style.backgroundPosition = `${bgX}% ${bgY}%`;
+  });
+  
+  // Reset on mouse leave
+  heroSection.addEventListener('mouseleave', function() {
+    heroSection.style.backgroundPosition = 'center';
+  });
+}
+
+// ============================================
 // SMOOTH SCROLLING
 // ============================================
 
