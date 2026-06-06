@@ -2,13 +2,14 @@
    COLOR PALETTE & VARIABLES
    ============================================ */
 :root {
-  --primary-color: #0A2540;
-  --secondary-color: #C8A96B;
-  --background-color: #FFFFFF;
-  --light-gray: #F5F5F5;
-  --text-dark: #333333;
-  --text-light: #666666;
-  --border-color: #E0E0E0;
+  --primary-color: #6B1D2F;
+  --secondary-color: #1B2430;
+  --accent-color: #C5A059;
+  --background-color: #F4F4F6;
+  --light-gray: #F0F0F2;
+  --text-dark: #2C2C2C;
+  --text-light: #555555;
+  --border-color: #D8D8DC;
   --success-color: #4CAF50;
   --transition: all 0.3s ease;
 }
@@ -89,7 +90,7 @@ p {
 }
 
 .section-subtitle {
-  color: var(--secondary-color);
+  color: var(--accent-color);
   font-size: 1.1rem;
   margin-bottom: 2rem;
   font-weight: 500;
@@ -106,7 +107,7 @@ p {
 }
 
 .navbar-top .nav-wrapper {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 0 20px;
 }
 
@@ -133,7 +134,7 @@ p {
   height: 3px;
   bottom: -5px;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   transition: width 0.3s ease;
 }
 
@@ -142,7 +143,7 @@ p {
 }
 
 .navbar-top .sidenav {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .navbar-top .sidenav li a {
@@ -155,7 +156,7 @@ p {
    ============================================ */
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.8) 100%);
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(27, 36, 48, 0.8) 100%);
   background-image: url('img/bg.jpg');
   background-size: 120% 120%;
   background-position: center;
@@ -176,7 +177,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 37, 64, 0.75);
+  background-color: rgba(27, 36, 48, 0.75);
   z-index: 1;
 }
 
@@ -208,17 +209,17 @@ p {
 .hero-subtitle {
   font-size: 1.5rem;
   margin-bottom: 2.5rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
-  background-color: var(--secondary-color) !important;
-  color: var(--primary-color) !important;
+  background-color: var(--primary-color) !important;
+  color: #FFFFFF !important;
   font-weight: 700;
   padding: 15px 40px !important;
   border-radius: 50px !important;
-  box-shadow: 0 10px 30px rgba(200, 169, 107, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(107, 29, 47, 0.3) !important;
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -226,8 +227,8 @@ p {
 }
 
 .cta-button:hover {
-  background-color: #B89659 !important;
-  box-shadow: 0 15px 40px rgba(200, 169, 107, 0.5) !important;
+  background-color: #5A1726 !important;
+  box-shadow: 0 15px 40px rgba(107, 29, 47, 0.5) !important;
   transform: translateY(-3px);
 }
 
@@ -308,19 +309,19 @@ p {
 
 .practice-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(200, 169, 107, 0.2);
+  box-shadow: 0 15px 40px rgba(107, 29, 47, 0.15);
 }
 
 .card-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.8) 100%);
+  background: linear-gradient(135deg, #301b1b 0%, rgb(119 49 49) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  color: var(--secondary-color);
+  color: #fff;
 }
 
 .card-icon i {
@@ -341,7 +342,7 @@ p {
    WHY CHOOSE US SECTION
    ============================================ */
 .why-us-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.9) 100%);
+  background: linear-gradient(135deg, #450404 0%, rgb(6 1 1 / 95%) 100%);
   position: relative;
 }
 
@@ -366,7 +367,7 @@ p {
 .why-us-icon {
   width: 70px;
   height: 70px;
-  background-color: var(--secondary-color);
+  background-color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -404,7 +405,7 @@ p {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
   margin-bottom: 20px;
-  border-left: 5px solid var(--secondary-color);
+  border-left: 5px solid var(--primary-color);
 }
 
 .testimonial-card:hover {
@@ -418,7 +419,7 @@ p {
 
 .testimonial-rating i {
   font-size: 1.3rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   margin-right: 3px;
 }
 
@@ -437,7 +438,7 @@ p {
 
 .testimonial-subtitle {
   font-size: 0.9rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 /* ============================================
@@ -464,7 +465,7 @@ p {
 .collapsible-header {
   background-color: white;
   color: var(--primary-color);
-  border-left: 5px solid var(--secondary-color);
+  border-left: 5px solid var(--accent-color);
   padding: 20px !important;
   font-weight: 600;
   transition: var(--transition);
@@ -477,7 +478,7 @@ p {
 
 .collapsible-header i {
   margin-right: 15px;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 .collapsible-body {
@@ -518,13 +519,13 @@ p {
 
 .input-field input:focus,
 .input-field textarea:focus {
-  border-bottom: 2px solid var(--secondary-color) !important;
-  box-shadow: 0 1px 0 0 var(--secondary-color) !important;
+  border-bottom: 2px solid var(--primary-color) !important;
+  box-shadow: 0 1px 0 0 var(--primary-color) !important;
 }
 
 .input-field input:focus + label,
 .input-field textarea:focus + label {
-  color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 /* ============================================
@@ -570,7 +571,7 @@ p {
    FOOTER
    ============================================ */
 .page-footer {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   margin-top: 80px;
 }
 
@@ -599,13 +600,13 @@ p {
 }
 
 .page-footer .social-icon:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
   transform: translateY(-3px);
 }
 
 .footer-copyright {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(27, 36, 48, 0.5);
   text-align: center;
   padding: 20px 0;
 }
