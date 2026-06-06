@@ -1,0 +1,750 @@
+/* ============================================
+   COLOR PALETTE & VARIABLES
+   ============================================ */
+:root {
+  --primary-color: #0A2540;
+  --secondary-color: #C8A96B;
+  --background-color: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #E0E0E0;
+  --success-color: #4CAF50;
+  --transition: all 0.3s ease;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+}
+
+p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.primary-color {
+  background-color: var(--primary-color) !important;
+}
+
+.secondary-color {
+  color: var(--secondary-color) !important;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar-top {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-top .nav-wrapper {
+  background-color: var(--primary-color);
+  padding: 0 20px;
+}
+
+.navbar-top .brand-logo {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.navbar-top .nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar-top .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-top .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-top .sidenav {
+  background-color: var(--primary-color);
+}
+
+.navbar-top .sidenav li a {
+  color: white !important;
+  font-weight: 500;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.8) 100%);
+  background-image: url('img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 37, 64, 0.75);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+  font-weight: 700;
+  padding: 15px 40px !important;
+  border-radius: 50px !important;
+  box-shadow: 0 10px 30px rgba(200, 169, 107, 0.3) !important;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-height: 60px;
+}
+
+.cta-button:hover {
+  background-color: #B89659 !important;
+  box-shadow: 0 15px 40px rgba(200, 169, 107, 0.5) !important;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+  background-color: var(--background-color);
+}
+
+.about-image {
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-height: 500px;
+  object-fit: cover;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-content {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-item:last-child {
+  border-bottom: none;
+}
+
+.about-item h5 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   PRACTICE AREAS SECTION
+   ============================================ */
+.practice-areas-section {
+  background-color: var(--light-gray);
+}
+
+.practice-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.practice-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(200, 169, 107, 0.2);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.8) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--secondary-color);
+}
+
+.card-icon i {
+  font-size: 2.5rem;
+}
+
+.practice-card h5 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.practice-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   WHY CHOOSE US SECTION
+   ============================================ */
+.why-us-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(10, 37, 64, 0.9) 100%);
+  position: relative;
+}
+
+.why-us-item {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.why-us-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  color: var(--primary-color);
+}
+
+.why-us-icon i {
+  font-size: 2rem;
+}
+
+.why-us-item h5 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.why-us-item p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+.testimonials-section {
+  background-color: var(--light-gray);
+  padding: 80px 0;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  margin-bottom: 20px;
+  border-left: 5px solid var(--secondary-color);
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.testimonial-rating {
+  margin-bottom: 1rem;
+}
+
+.testimonial-rating i {
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  margin-right: 3px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq-section {
+  background-color: var(--background-color);
+}
+
+.collapsible {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.collapsible > li {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.collapsible > li:last-child {
+  border-bottom: none;
+}
+
+.collapsible-header {
+  background-color: white;
+  color: var(--primary-color);
+  border-left: 5px solid var(--secondary-color);
+  padding: 20px !important;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.collapsible-header:hover {
+  background-color: var(--light-gray);
+}
+
+.collapsible-header i {
+  margin-right: 15px;
+  color: var(--secondary-color);
+}
+
+.collapsible-body {
+  padding: 20px !important;
+  background-color: var(--light-gray);
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.collapsible-body p {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-section {
+  background-color: var(--light-gray);
+}
+
+#contact-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  min-height: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.input-field label {
+  color: var(--text-light) !important;
+}
+
+.input-field input,
+.input-field textarea {
+  border-bottom: 2px solid var(--border-color) !important;
+  color: var(--text-dark) !important;
+}
+
+.input-field input:focus,
+.input-field textarea:focus {
+  border-bottom: 2px solid var(--secondary-color) !important;
+  box-shadow: 0 1px 0 0 var(--secondary-color) !important;
+}
+
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+  color: var(--secondary-color) !important;
+}
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  transition: var(--transition);
+  z-index: 1000;
+  text-decoration: none;
+  animation: pulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  background-color: #20ba5d;
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+  transform: scale(1.1);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 10px 50px rgba(37, 211, 102, 0.8);
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.page-footer {
+  background-color: var(--primary-color);
+  margin-top: 80px;
+}
+
+.page-footer h5 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.page-footer p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.8rem;
+}
+
+.page-footer .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.page-footer .social-icon:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.footer-copyright {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-copyright p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .practice-card {
+    margin-bottom: 15px;
+  }
+
+  .about-image {
+    margin-bottom: 30px;
+  }
+
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px !important;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  #contact-form {
+    padding: 20px;
+  }
+
+  .collapsible-header {
+    padding: 15px !important;
+  }
+
+  .collapsible-header i {
+    font-size: 1.2rem;
+  }
+
+  .floating-whatsapp {
+    bottom: 15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .floating-whatsapp i {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    padding: 0 15px;
+  }
+
+  .why-us-item {
+    padding: 20px;
+  }
+
+  .why-us-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .why-us-icon i {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .navbar-top,
+  .floating-whatsapp,
+  .page-footer {
+    display: none;
+  }
+}
