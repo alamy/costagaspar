@@ -114,13 +114,13 @@ if (contactForm) {
     const phoneDigits = phone.replace(/\D/g, '');
     
     // Create WhatsApp message
-    const whatsappMessage = `Olá Doutor!\n\nMeu nome é: ${name}\nMeu email: ${email}\nMeu telefone: ${phone}\n\nMensagem:\n${message}\n\nAguardo retorno!`;
+    const whatsappMessage = `Olá, Dr. Daniel!\n\nMeu nome é: ${name}\nMeu email: ${email}\nMeu telefone: ${phone}\n\nMensagem:\n${message}\n\nAguardo retorno!`;
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
-    // WhatsApp URL
-    const whatsappURL = `https://wa.me/5581999999999?text=${encodedMessage}`;
+    // WhatsApp URL - Updated with correct phone number
+    const whatsappURL = `https://wa.me/5581997078843?text=${encodedMessage}`;
 
     // Show success toast
     M.toast({html: 'Redirecionando para WhatsApp...'});
