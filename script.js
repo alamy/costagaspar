@@ -147,7 +147,7 @@ if (contactForm) {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     
     // WhatsApp URL - Updated with correct phone number
-    const whatsappURL = `https://wa.me/5581997078843?text=${encodedMessage}`;
+    const whatsappURL = `https://wa.me/5581920003295?text=${encodedMessage}`;
 
     // Show success toast
     M.toast({html: 'Redirecionando para WhatsApp...'});
